@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+body,
+html,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+@font-face {
+  font-family: monospaceBold;
+  src: url("src/assets/fonts/SpaceMono-Bold.ttf");
+}
+@font-face {
+  font-family: monospaceRegular;
+  src: url("src/assets/fonts/SpaceMono-Regular.ttf");
+}
+
+@theme {
+  --color-neutral-900: #141d2f;
+  --color-neutral-800: #1e2a47;
+  --color-neutral-700: #2b3442;
+  --color-neutral-500: #4b6a9b;
+  --color-neutral-300: #697c9a;
+  --color-neutral-200: #90a4d4;
+  --color-neutral-100: #f6f8ff;
+
+  --color-blue-500: #0079ff;
+  --color-blue-300: #60abff;
+
+  --color-red-500: #f74646;
+
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1140px;
+}
+
+.textPreset1 {
+  font-family: monospaceBold;
+  font-size: 1.625rem;
+  line-height: 120%;
+}
+.textPreset2 {
+  font-family: monospaceBold;
+  font-size: 1.375rem;
+  line-height: 140%;
+}
+.textPreset3 {
+  font-family: monospaceRegular;
+  font-size: 1.125rem;
+  line-height: 140%;
+}
+.textPreset3MOBILE {
+  font-family: monospaceRegular;
+  font-size: 0.8125rem;
+  line-height: 140%;
+}
+.textPreset4 {
+  font-family: monospaceRegular;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.textPreset5 {
+  font-family: monospaceBold;
+  font-size: 1rem;
+  line-height: 150%;
+}
+.textPreset6 {
+  font-family: monospaceRegular;
+  font-size: 0.9375rem;
+  line-height: 150%;
+}
+.textPreset7 {
+  font-family: monospaceRegular;
+  font-size: 0.8125rem;
+  line-height: 150%;
+}
+.textPreset8 {
+  font-family: monospaceBold;
+  font-size: 0.8125rem;
+  line-height: 140%;
+}
