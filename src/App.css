@@ -15,11 +15,11 @@ html,
 
 @font-face {
   font-family: monospaceBold;
-  src: url("src/assets/fonts/SpaceMono-Bold.ttf");
+  src: url("fonts/SpaceMono-Bold.ttf");
 }
 @font-face {
   font-family: monospaceRegular;
-  src: url("src/assets/fonts/SpaceMono-Regular.ttf");
+  src: url("fonts/SpaceMono-Regular.ttf");
 }
 
 @theme {

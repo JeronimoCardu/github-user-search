@@ -17,12 +17,13 @@
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![DESKTOP](./screenshot-desktop.png)
+![TABLET](./screenshot-tablet.png)
+![MOBILE](./screenshot-mobile.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 

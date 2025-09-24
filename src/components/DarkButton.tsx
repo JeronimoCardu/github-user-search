@@ -17,7 +17,7 @@ export default function DarkButton() {
     >
       <p>{theme ? theme.toUpperCase() : "THEME"}</p>
       <img
-        src={`src/assets/icon-${theme == "light" ? "sun" : "moon"}.svg`}
+        src={`/icon-${theme == "light" ? "sun" : "moon"}.svg`}
         alt={theme ? theme.toUpperCase() : "THEME"}
       />
     </button>

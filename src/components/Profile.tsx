@@ -54,7 +54,7 @@ export default function Profile({ userSearched }: Props) {
         className="h-[70px] hidden tablet:full tablet:scale-200 tablet:flex tablet:justify-self-center tablet:self-center rounded-full w-[70px]"
         src={
           userSearched == "octakit"
-            ? "src/assets/image.png"
+            ? "/image.png"
             : userData?.avatar_url
         }
         alt=""
@@ -65,7 +65,7 @@ export default function Profile({ userSearched }: Props) {
           className="h-[70px] tablet:hidden rounded-full w-[70px]"
           src={
             userSearched == "octakit"
-              ? "src/assets/image.png"
+              ? "/image.png"
               : userData?.avatar_url
           }
           alt=""
@@ -142,7 +142,7 @@ export default function Profile({ userSearched }: Props) {
           <div className="flex w-fit items-center focus-within:ring-2 focus-within:ring-blue-500 dark:focus-within:ring-offset-neutral-800 focus-within:ring-offset-4 focus-within:rounded-xl gap-[1rem]">
             <img
               className="max-w-10 max-h-8"
-              src="src/assets/icon-website.svg"
+              src="/icon-website.svg"
               alt="website"
             />
             <a

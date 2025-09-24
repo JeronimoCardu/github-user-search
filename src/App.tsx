@@ -27,7 +27,7 @@ function App() {
           <div className="flex w-full tablet:gap-4  ">
             <img
               className="h-6 w-6 self-center justify-self-center"
-              src="src/assets/icon-search.svg"
+              src="/icon-search.svg"
               alt="search"
             />
             <input
