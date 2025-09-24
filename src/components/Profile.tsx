@@ -64,10 +64,10 @@ export default function Profile({ userSearched }: Props) {
           id="photo-profile"
           className="h-[70px] tablet:hidden rounded-full w-[70px]"
           src={
-          userSearched == "octakit"
-            ? "src/assets/image.png"
-            : userData?.avatar_url
-        }
+            userSearched == "octakit"
+              ? "src/assets/image.png"
+              : userData?.avatar_url
+          }
           alt=""
         />
         <div className="">
@@ -101,7 +101,7 @@ export default function Profile({ userSearched }: Props) {
         className="text-neutral-500 my-6 tablet:hidden opacity-75 h-fit textPreset6"
         id="bio"
       >
-        {userData?.bio ?? "---"}
+        {userData?.bio ?? "This profile has no bio"}
       </p>
       <div className="flex  tablet:grid tablet:col-start-2 flex-col gap-[1.5rem]">
         <div className="flex flex-col dark:bg-neutral-900  tablet:flex-row rounded-[10px] bg-neutral-100 gap-[1rem] p-[1rem_20px] tablet:p-[1rem_2rem] justify-between">
