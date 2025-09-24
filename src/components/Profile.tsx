@@ -24,6 +24,7 @@ type DataUserProps = {
 export default function Profile({ userSearched }: Props) {
   const [userData, setUserData] = useState<DataUserProps>();
   const [notFound, setNotFound] = useState<boolean>(false);
+
   useEffect(() => {
     async function findUser() {
       try {
@@ -43,6 +44,7 @@ export default function Profile({ userSearched }: Props) {
     }
     findUser();
   }, [userSearched]);
+
   return notFound ? (
     <ErrorDetail />
   ) : (
@@ -50,14 +52,22 @@ export default function Profile({ userSearched }: Props) {
       <img
         id="photo-profile"
         className="h-[70px] hidden tablet:full tablet:scale-200 tablet:flex tablet:justify-self-center tablet:self-center rounded-full w-[70px]"
-        src={userData?.avatar_url ?? "src/assets/image.png"}
+        src={
+          userSearched == "octakit"
+            ? "src/assets/image.png"
+            : userData?.avatar_url
+        }
         alt=""
       />
       <div className="flex relative tablet:h-fit w-full gap-[20px]">
         <img
           id="photo-profile"
           className="h-[70px] tablet:hidden rounded-full w-[70px]"
-          src={userData?.avatar_url ?? "src/assets/image.png"}
+          src={
+          userSearched == "octakit"
+            ? "src/assets/image.png"
+            : userData?.avatar_url
+        }
           alt=""
         />
         <div className="">
@@ -77,13 +87,13 @@ export default function Profile({ userSearched }: Props) {
             className="tablet:absolute dark:text-white tablet:-top-8 tablet:right-0  text-neutral-500 textPreset6"
             id="date"
           >
-            {userData?.created_at ?? "-"}
+            {userData?.created_at ?? "Not available"}
           </p>
           <p
             className="text-neutral-500 my-[1.5rem] dark:text-white hidden tablet:block  opacity-75 h-fit textPreset6"
             id="bio"
           >
-            {userData?.bio ?? "---"}
+            {userData?.bio ?? "This profile has no bio"}
           </p>
         </div>
       </div>
