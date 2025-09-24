@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DataProfile from "./dataProfile";
+import ErrorDetail from "./ErrorDetail";
 
 type Props = {
   userSearched: string;
@@ -22,6 +23,7 @@ type DataUserProps = {
 
 export default function Profile({ userSearched }: Props) {
   const [userData, setUserData] = useState<DataUserProps>();
+  const [notFound, setNotFound] = useState<boolean>(false);
   useEffect(() => {
     async function findUser() {
       try {
@@ -29,15 +31,21 @@ export default function Profile({ userSearched }: Props) {
           `https://api.github.com/users/${userSearched}`
         );
         const dataJSON = await data.json();
-        setUserData(dataJSON);
+        if (!data.ok) {
+          setNotFound(true);
+        } else {
+          setNotFound(false);
+          setUserData(dataJSON);
+        }
       } catch (err) {
         console.log("Hubo un error al buscar al usuario", err);
       }
     }
     findUser();
   }, [userSearched]);
-  console.log(userData);
-  return (
+  return notFound ? (
+    <ErrorDetail />
+  ) : (
     <section className="bg-white dark:bg-neutral-800 relative shadow-[0_16px_30px_-10px_rgba(70,96,187,.19)] dark:shadow-none  rounded-[15px] mb-8 tablet:p-[3rem_2rem] p-[2rem_1.5rem] tablet:grid tablet:grid-cols-[20%_75%] tablet:gap-x-[2rem]">
       <img
         id="photo-profile"
@@ -128,7 +136,7 @@ export default function Profile({ userSearched }: Props) {
               alt="website"
             />
             <a
-            target='_blank'
+              target="_blank"
               className="hover:underline focus:outline-none"
               href={userData?.blog}
               id="website"
